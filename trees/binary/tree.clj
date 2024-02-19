@@ -37,4 +37,9 @@
     (is (= (lookup (insert (make-leaf 5) 1) 1)))
     (is (= (lookup (insert (make-leaf 5) 10) 10)))
     (is (= (lookup (binary-tree [1 10 4 8 2 3 7]) 3) 3))
-    (is (= (lookup (binary-tree [1 10 4 8 2 3 7]) 6) nil))))
+    (is (= (lookup (binary-tree [1 10 4 8 2 3 7]) 6) nil)))
+
+  (testing "Converting binary trees to lists"
+    (is (= (to-list nil)) nil)
+    (is (= (to-list (Tree. 23 nil nil)) '(23)))
+    (is (= (to-list (binary-tree [100 1 34 8 1000 11])) '(1 8 11 34 100 1000)))))
